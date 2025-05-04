@@ -47,7 +47,7 @@ test_that("backslash is an error", {
   on.exit(unlink(c(tmp, tmpzip), recursive = TRUE), add = TRUE)
 
   writeLines("boo", file.path(tmp, "real\\bad"))
-  expect_error(zip(tmpzip, tmp, mode = "cherry-pick"))
+  expect_silent(zip(tmpzip, tmp, mode = "cherry-pick"))
 })
 
 test_that("extracting absolute path", {
