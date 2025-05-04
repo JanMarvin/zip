@@ -1,7 +1,8 @@
 
-PKG_CFLAGS = $(C_VISIBILITY)
+PKG_CFLAGS = $(C_VISIBILITY) -DUSE_EXTERNAL_MZCRC
+PKG_LIBS = $(LDFLAGS) -lz
 
-OBJECTS = init.o miniz.o rzip.o zip.o unixutils.o
+OBJECTS = init.o miniz.o rzip.o zip.o unixutils.o wrapper.o
 
 .PHONY: all clean
 
